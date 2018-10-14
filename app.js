@@ -1,4 +1,4 @@
-const { Client } = require('discord.js');
+const { Client, Attachment } = require('discord.js');
 const bot = new Client();
 const cfg = require('./config.json');
 
@@ -56,7 +56,8 @@ bot.on('message', msg =>{
         if (!msg.member.permissions.has('ADMINISTRATOR')){return msg.reply ('You do not have access to this command.')};
         const member = msg.mentions.members.first();
         if (!member) return msg.reply('Invalid command, please use s.kick `@User#1234`');
-        member.kick(`Kicked by ${msg.author.tag}`);
+        member.kick({
+            reason: `Kicked by ${msg.author.tag}`});
     }
 
     if (command === 'lolfind'){
@@ -72,7 +73,14 @@ bot.on('message', msg =>{
         msg.channel.send('I was created by Suru#0267.');
     }
 
+    // Works but needs a reason to use
+    // if (command === 'postImage'){
+    //     const attachment = new Attachment('');
+    //     msg.channel.send(attachment);
+    //     console.log(`${attachment}`);
+    // }
+
     //console.log(`Args: ${args}\nCommand: ${command}`);
 });
-
+ 
 bot.login(cfg.token);
