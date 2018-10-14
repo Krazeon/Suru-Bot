@@ -3,8 +3,6 @@ var logger = require('winston');
 var auth = require('./auth.json');
 var commands = require('./commands.js')
 
-//Variables
-let lolUser = '';
 
 // Configure logger settings
 logger.remove(logger.transports.Console);
@@ -47,14 +45,6 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             // !dadjoke
             case 'dadjoke':
                 bot.sendMessage({to: channelID, message: commands.dadJokes});
-                break;
-            // !findLolPlayer Username
-            case 'findLolPlayer':
-                let sendLolUser = message.substring(15, message.length);
-                exports.sendLolUser = message.substring(15, message.length);
-                bot.sendMessage({to:channelID, message: sendLolUser});
-                bot.sendMessage({to:channelID, message: commands.FindLol});
-                bot.sendMessage({to:channelID, message: 'Debug'});
                 break;
          }
      }
