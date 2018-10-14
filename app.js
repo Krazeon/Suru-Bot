@@ -33,8 +33,7 @@ bot.on('message', msg =>{
 
          Normal Commands
          s.lolfind <username> - Looks up the username on op.gg. (NA Players)
-         s.whosyourdaddy - Tells you who my daddy is.
-         s.myprofilepic - Posts a link to your discord profile picture.\`\`\``);
+         s.whosyourdaddy - Tells you who my daddy is.\`\`\``);
 
          if (msg.member.permissions.has('ADMINISTRATOR')){
              msg.member.send(`\`\`\`You are recieving this secondary list because you have administrative permissions:
@@ -71,12 +70,9 @@ bot.on('message', msg =>{
     }
 
     if (command === 'whosyourdaddy'){
-        msg.channel.send('I was created by a programmer called Suru.');
+        msg.channel.send('I was created by Suru#0267.');
     }
 
-    if (command === 'myprofilepic'){
-        msg.channel.send(`Here's your profile picture: ${msg.author.avatarURL}`);
-    }
     // Works but needs a reason to use
     // if (command === 'postImage'){
     //     const attachment = new Attachment('');
