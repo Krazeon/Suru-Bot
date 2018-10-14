@@ -1,11 +1,11 @@
 {
-  "name": "Suru-bot",
+  "name": "surubot",
   "version": "1.0.0",
-  "description": "My First Discord Bot",
-  "main": "bot.js",
-  "author": "Tou Vang",
+  "description": "",
+  "main": "app.js",
+  "author": "Suru",
+  "license": "ISC",
   "dependencies": {
-    "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
-    "winston": "^3.1.0"
+    "discord.js": "^11.4.2"
   }
 }
