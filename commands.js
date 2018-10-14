@@ -1,6 +1,11 @@
 //Command responses for Suru-bot
+var botCommand = require('./bot.js')
+
 exports.helpMsg = getHelpMsgs();
 exports.dadJokes = getDadJokes();
+
+let lolUsername = botCommand.sendLolUser;
+exports.FindLol = getFindLoL(lolUsername);
 
 //Functions
 
@@ -49,6 +54,12 @@ function getDadJokes(){
     return dadJokes[randNum];
 }
 
+//TODO - Fix random number
 function random(low, high) {
     return Math.floor(Math.random() * (high - low) + low)
   }
+
+function getFindLoL(username){
+    let url = 'http://na.op.gg/summoner/userName=' + username;
+    return url
+}
